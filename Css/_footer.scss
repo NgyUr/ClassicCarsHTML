@@ -1,0 +1,42 @@
+footer {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    height: 10vh;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    align-items: center;
+    color: #eeeeee;
+
+
+
+    .footer-logo {
+        font-family: 'Tangerine', cursive;
+        font-size: 30px;
+
+    }
+
+    .social-links {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        p {
+            margin: 20px;
+        }
+
+        img {
+            height: 30%;
+            margin: 20px;
+        }
+
+        img:hover {
+
+            height: 60%;
+            margin: 50px;
+
+
+        }
+
+    }
+}

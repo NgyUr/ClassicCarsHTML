@@ -1,0 +1,102 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+
+
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 90px;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 38px;
+    letter-spacing: 5px;
+    color: white;
+}
+
+
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.video {
+    background: #fff;
+    padding-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    width: 23%;
+    /* Thumbnails 4 across */
+    margin: 1%;
+    float: left;
+    text-align: center;
+}
+
+
+
+.video figure {
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    box-shadow: 1px 1px 15px silver;
+
+    .video figure a {
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: none;
+        line-height: 0;
+    }
+}
+
+/**  Media Queries  */
+
+@media (max-width: 1024px) {
+    .video {
+        width: 30.33333%;
+        /* Thumbnails 3 egy sorban */
+    }
+}
+
+@media (max-width: 768px) {
+    .video {
+        width: 48%;
+        /* Thumbnails 2 egy sorban */
+    }
+}
+
+@media (max-width: 425px) {
+    .video {
+        display: block;
+        width: 96%;
+        margin: 2%;
+        float: none;
+    }
+}
+
+
+.video img {
+    width: 100%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.video img:hover,
+.video img:active,
+.video img:focus {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}

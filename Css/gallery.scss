@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 90px;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 38px;
+    letter-spacing: 5px;
+    color: white;
+}
+
+#gallery {
+
+    ul {
+        list-style-type: none;
+
+        li {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+
+            .mosaicItem {
+                width: 400px;
+                height: 400px;
+                margin: 30px;
+                box-shadow: 1px 1px 15px silver;
+
+
+                &>a {
+                    .text {
+                        position: absolute;
+                        bottom: -50px;
+                        left: 0;
+                        width: 100%;
+                        height: 50px;
+                        background: rgba(0, 0, 0, 0.8);
+                        color: white;
+                        font-family: 'Open Sans', sans-serif;
+                        text-align: center;
+                        font-weight: 600;
+                        line-height: 50px;
+                        transition: all .5s ease-in-out;
+                        opacity: 0;
+                        margin: 30px;
+                        margin-bottom: 0;
+                    }
+
+                    &:hover .text {
+                        bottom: 0;
+                        opacity: 1;
+
+                    }
+                }
+            }
+
+            .popin {
+                display: flex;
+                text-align: center;
+                position: fixed;
+                top: -100%;
+                transition: all ease .5s;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                justify-content: center;
+                align-items: center;
+                z-index: 999;
+
+                &:target {
+                    top: 0;
+                    opacity: 1;
+
+                    .imgBox {
+                        position: relative;
+                        z-index: 998;
+
+                        &:before {
+                            content: '✖';
+                            position: absolute;
+                            right: 10px;
+                            top: 10px;
+                            color: white;
+                            z-index: 999;
+                        }
+
+                        img {
+                            border: 3px solid white;
+                        }
+                    }
+                }
+
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: rgba(0, 0, 0, 0.7);
+                    width: 100%;
+                    height: 100%;
+                    z-index: 899;
+                }
+            }
+        }
+    }
+}
+
+
+.mosaicItem img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+
+
+    &:hover {
+        -webkit-filter: grayscale(0);
+        filter: grayscale(0);
+    }
+}
